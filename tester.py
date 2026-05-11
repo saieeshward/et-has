@@ -1,6 +1,6 @@
 from pathlib import Path
 from typing import Optional
-from ET_has import InitET, Blobber, Commiter
+from ET_has import InitET, Blobber, Commiter, Differ
 
 init = InitET()
 blobber = Blobber(init)
@@ -17,3 +17,10 @@ if last_commit:
     print(blob_id)
     file_content: Optional[bytes] = blobber.load_blob(blob_hash=blob_id)
     print(file_content if file_content else "Nothing")
+
+# Demonstrate Differ functionality
+differ = Differ(commiter)
+diff = differ.diff("config.yaml")
+if diff:
+    print("\nDiff output:")
+    print(diff)
