@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: et-has
+Version: 0.1.0
+Summary: File snapshot and history tracking library
+Requires-Python: >=3.11
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
